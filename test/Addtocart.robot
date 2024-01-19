@@ -1,22 +1,3 @@
-#*** Settings ***
-#Library           SeleniumLibrary
-#
-#*** Variables ***
-#${BROWSER}        Chrome
-#${URL}            https://www.saucedemo.com/v1/
-#${USERNAME}       standard_user
-#${PASSWORD}       secret_sauce
-#
-#*** Test Cases ***
-#Login Test
-#    Open Browser    ${URL}    ${BROWSER}
-#    Input Text      user-name    ${USERNAME}
-#    Input Password  password     ${PASSWORD}
-#    Click Button    login-button
-#    Sleep           2s
-#    Capture Page Screenshot    login_success.png
-#
-#    Close Browser
 *** Settings ***
 Library           SeleniumLibrary
 
@@ -87,4 +68,5 @@ Price total
     Element Text Should Be    xpath=//*[@id="checkout_summary_container"]/div/div[2]/div[7]   Total: $49.66
     Click Element    xpath=//*[@id="checkout_summary_container"]/div/div[2]/div[8]/a[2]
     Sleep    5s
+    Close Browser
     
