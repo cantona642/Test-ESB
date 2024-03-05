@@ -2,11 +2,13 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-${BROWSER}        Chrome
+${BROWSER}        Edge
 ${URL}            https://www.saucedemo.com/v1/
+#${edge_driver_path}    C:/Users/CTAS131/Downloads/msedgedriver.exe
 ${USERNAME}       standard_user
 ${PASSWORD}       secret_sauce
 ${ADDTOCART}      xpath=//*[@id="inventory_item_container"]/div/div/div/button
+#${BACKBTN}        xpath=//*[@id="inventory_item_container"]/div/button
 ${BACKBTN}        xpath=//*[@id="inventory_item_container"]/div/button
 ${FNAME}          Aldy
 ${LNAME}          Cantona
@@ -39,7 +41,10 @@ Add to cart
     Click Element    ${ADDTOCART}
     Sleep    2s
     Capture Page Screenshot     ss/ss2.png
-    Click Element    ${BACKBTN}
+#    Click Element    ${BACKBTN}
+    Wait Until Element Is Visible    ${BACKBTN}
+    Sleep    2s
+#    Click Button   ${BACKBTN}
 
 Scroll page
     Scroll Element Into View    xpath=//*[@id="item_3_title_link"]/div
