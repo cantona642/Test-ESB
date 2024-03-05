@@ -5,4 +5,5 @@ report.html
 selenium-screenshot-*.png
 *.txt
 *.png
+log/ss
 
